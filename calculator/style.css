@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  transition: 0.3s;
+  overflow-x: hidden;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+  color: white;
+}
+
+body.light {
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc, #ffffff);
+  color: #111827;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.top-bar h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.top-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.mini-btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  background: #f59e0b;
+  color: white;
+}
+
+.phone-frame {
+  max-width: 470px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 34px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+}
+
+body.dark .phone-frame {
+  background: linear-gradient(145deg, #0f172a, #111827);
+}
+
+body.light .phone-frame {
+  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+}
+
+.calculator {
+  width: 100%;
+  padding: 16px;
+  border-radius: 26px;
+}
+
+body.dark .calculator {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+body.light .calculator {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.history-box {
+  width: 100%;
+  height: 130px;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+body.dark .history-box {
+  background: #020617;
+  color: #cbd5e1;
+}
+
+body.light .history-box {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.small-btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  background: #ef4444;
+  color: white;
+}
+
+.history div {
+  padding: 6px 8px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.history div:hover {
+  background: rgba(100, 116, 139, 0.18);
+}
+
+.memory-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.memory-bar button {
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+body.dark .memory-bar button {
+  background: #334155;
+  color: white;
+}
+
+body.light .memory-bar button {
+  background: #cbd5e1;
+  color: #111827;
+}
+
+.display-wrap {
+  margin-bottom: 10px;
+}
+
+.expression-preview {
+  min-height: 24px;
+  font-size: 14px;
+  opacity: 0.75;
+  text-align: right;
+  padding: 0 6px 6px;
+  word-break: break-all;
+}
+
+.display {
+  width: 100%;
+  height: 80px;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  padding: 12px 16px;
+  text-align: right;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+body.dark .display {
+  background: #000000;
+  color: #ffffff;
+}
+
+body.light .display {
+  background: #ffffff;
+  color: #111827;
+}
+
+.action-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.copy-btn {
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #0ea5e9;
+  color: white;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  transition: transform 0.2s ease;
+}
+
+button {
+  height: 58px;
+  border: none;
+  border-radius: 16px;
+  font-size: 19px;
+  cursor: pointer;
+  transition: 0.15s;
+  user-select: none;
+}
+
+body.dark button {
+  background: #1e293b;
+  color: white;
+}
+
+body.light button {
+  background: #dbeafe;
+  color: #111827;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+button:active,
+button.touch-active {
+  transform: scale(0.94);
+}
+
+.operator {
+  background: #2563eb !important;
+  color: white !important;
+}
+
+.equal {
+  background: #16a34a !important;
+  color: white !important;
+  grid-column: span 5;
+  height: 62px;
+  font-size: 24px;
+}
+
+.control {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+.scientific {
+  background: #7c3aed !important;
+  color: white !important;
+}
+
+.history-clear {
+  background: #f59e0b !important;
+  color: white !important;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 10px;
+  }
+
+  .phone-frame {
+    max-width: 100%;
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .calculator {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .equal {
+    grid-column: span 4;
+  }
+
+  button {
+    height: 54px;
+    font-size: 17px;
+  }
+
+  .display {
+    font-size: 24px;
+    height: 72px;
+  }
+
+  .top-bar h1 {
+    font-size: 22px;
+  }
+}

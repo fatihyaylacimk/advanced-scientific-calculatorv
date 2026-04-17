@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <div class="app">
+    <div class="top-bar">
+      <h1>Pro Calculator</h1>
+      <div class="top-actions">
+        <button id="angleToggle" class="mini-btn">DEG</button>
+        <button id="themeToggle" class="mini-btn">☀️</button>
+      </div>
+    </div>
+
+    <div class="phone-frame">
+      <div class="calculator">
+        <div class="history-box" id="historyBox">
+          <div class="history-header">
+            <span>History</span>
+            <button class="small-btn" onclick="clearHistory()">Clear</button>
+          </div>
+          <div id="history" class="history">No history yet</div>
+        </div>
+
+        <div class="memory-bar">
+          <button onclick="memoryClear()">MC</button>
+          <button onclick="memoryRecall()">MR</button>
+          <button onclick="memoryAdd()">M+</button>
+          <button onclick="memorySubtract()">M-</button>
+        </div>
+
+        <div class="display-wrap">
+          <div id="expressionPreview" class="expression-preview"></div>
+          <input type="text" id="display" class="display" readonly />
+        </div>
+
+        <div class="action-bar">
+          <button class="copy-btn" onclick="copyResult()">COPY</button>
+          <button class="copy-btn" onclick="appendAns()">ANS</button>
+        </div>
+
+        <div class="buttons" id="buttonsArea">
+          <button class="control" onclick="clearDisplay()">AC</button>
+          <button class="control" onclick="deleteLast()">DEL</button>
+          <button class="operator" onclick="appendValue('(')">(</button>
+          <button class="operator" onclick="appendValue(')')">)</button>
+          <button class="operator" onclick="appendPercent()">%</button>
+
+          <button class="scientific" onclick="appendFunction('sin(')">sin</button>
+          <button class="scientific" onclick="appendFunction('cos(')">cos</button>
+          <button class="scientific" onclick="appendFunction('tan(')">tan</button>
+          <button class="scientific" onclick="appendFunction('log(')">log</button>
+          <button class="scientific" onclick="appendFunction('ln(')">ln</button>
+
+          <button class="scientific" onclick="appendFunction('sqrt(')">√</button>
+          <button class="scientific" onclick="appendValue('^')">xʸ</button>
+          <button class="scientific" onclick="appendFunction('abs(')">abs</button>
+          <button class="scientific" onclick="appendValue('3.14159265359')">π</button>
+          <button class="scientific" onclick="appendValue('Math.E')">e</button>
+
+          <button class="scientific" onclick="appendFunction('asin(')">asin</button>
+          <button class="scientific" onclick="appendFunction('acos(')">acos</button>
+          <button class="scientific" onclick="appendFunction('atan(')">atan</button>
+          <button class="scientific" onclick="appendValue('!')">x!</button>
+          <button class="operator" onclick="appendValue('/')">÷</button>
+
+          <button onclick="appendValue('7')">7</button>
+          <button onclick="appendValue('8')">8</button>
+          <button onclick="appendValue('9')">9</button>
+          <button class="operator" onclick="appendValue('*')">×</button>
+          <button class="operator" onclick="appendValue('-')">−</button>
+
+          <button onclick="appendValue('4')">4</button>
+          <button onclick="appendValue('5')">5</button>
+          <button onclick="appendValue('6')">6</button>
+          <button class="operator" onclick="appendValue('+')">+</button>
+          <button class="history-clear" onclick="clearHistory()">H-C</button>
+
+          <button onclick="appendValue('1')">1</button>
+          <button onclick="appendValue('2')">2</button>
+          <button onclick="appendValue('3')">3</button>
+          <button onclick="appendValue('0')">0</button>
+          <button onclick="appendValue('.')">.</button>
+
+          <button class="equal" onclick="calculateResult()">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
